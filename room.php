@@ -1,7 +1,12 @@
 <?php
 // room.php
+session_start();
 
-$roomName = $_POST['room_name'];
+if (isset($_POST['room_name'])) {
+    $_SESSION['room_name'] = trim($_POST['room_name']);
+}
+
+$roomName = $_SESSION['room_name'] ?? 'Без названия';
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +27,7 @@ $roomName = $_POST['room_name'];
 
 <h2>Встречи</h2>
 
-<button>Создать встречу</button>
+<a href="create_meeting.php">Создать встречу</a>
 
 <p>Встречи появятся здесь</p>
 
