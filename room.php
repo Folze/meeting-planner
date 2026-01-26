@@ -15,8 +15,16 @@ $roomName = $_POST['room_name'];
     <h1>Комната: <?= htmlspecialchars($roomName) ?></h1>
 
     <p>Здесь будут участники и встречи</p>
-
+    <p>Участники появятся здесь</p>
     <a href="index.php">← Назад</a>
+
+    <hr>
+
+<h2>Встречи</h2>
+
+<button>Создать встречу</button>
+
+<p>Встречи появятся здесь</p>
 
 </body>
 </html>
