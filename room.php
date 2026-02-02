@@ -27,6 +27,22 @@ $roomName = $_SESSION['room_name'] ?? 'Без названия';
 
 <h2>Встречи</h2>
 
+<?php if (!empty($_SESSION['meetings'])): ?>
+    <ul>
+        <?php foreach ($_SESSION['meetings'] as $meeting): ?>
+            <li>
+                <strong><?= htmlspecialchars($meeting['title']) ?></strong><br>
+                <?= htmlspecialchars($meeting['place']) ?><br>
+                <?= htmlspecialchars($meeting['date']) ?> <?= htmlspecialchars($meeting['time']) ?>
+            </li>
+            <br>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <p>Встреч пока нет</p>
+<?php endif; ?>
+
+
 <a href="create_meeting.php">Создать встречу</a>
 
 <p>Встречи появятся здесь</p>
